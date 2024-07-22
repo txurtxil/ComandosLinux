@@ -20,14 +20,23 @@ Hacer test de velociad en una unidad (en este caso la MicroSD):
   Para Ver procesos de los docker en ejecucion:
   
       sudo docker ps
+      
+Mostrará información tanto de los dockers que tenemos activos como los que tenemos en el sistema 
+pero no se están ejecutando actualmente.
+
+      sudo docker ps --all   
 
   Para ver estadisticas de los docker en tiempo real:
   
-      sudo docker ps
+      sudo docker stats
 
   Para ver las imagenes docker en el sistema
   
       sudo docker image ls
+      
+Elimina todas las imágenes que no están siendo utilizadas en ningún contenedor en ejecución.
+     
+     sudo docker image prune
 
  ### Borrado de un docker:
   
@@ -40,19 +49,27 @@ Hacer test de velociad en una unidad (en este caso la MicroSD):
        sudo rm -R carpetadelDocker
   
  ### Copia exacta de un docker     
+
+Entramos en el docker a copiar:
   
         cd DockerAcopiar
         
-Esto parará este contenedor en concreto y mantendrá el resto de contenedores funcionando con normalidad.        
+Este comando parará este contenedor en concreto y mantendrá el resto de contenedores funcionando con normalidad:
 
         sudo docker-compose down 
         
-        cd ..
-Podemos levantar el docker original «sudo docker-compose -p "DockerAcopiar" up -d» y modificar el docker-compose.yl del copiado        
- 
-        cp -r DockeAcopiar DockeAcopiar2   
+Vamos a un nivel inferior:
 
-  Copias de seguridad de un Docker.
+        cd ..
+
+Procedemos a copiar el docker:
+        
+        cp -r DockeAcopiar DockeAcopiar2
+
+Podemos levantar el docker original «sudo docker-compose -p "DockerAcopiar" up -d» y modificar el docker-compose.yml del copiado para trabajar en el.
+    
+
+### Copias de seguridad de un Docker.
   
 Simple lista de los id’s de todos los contenedores que están ejecutándose en nuestra máquina.
 
