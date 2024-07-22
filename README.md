@@ -22,7 +22,7 @@ Hacer test de velociad en una unidad (en este caso la MicroSD):
       sudo docker ps
       
 Mostrará información tanto de los dockers que tenemos activos como los que tenemos en el sistema 
-pero no se están ejecutando actualmente.
+pero no se están ejecutando actualmente:
 
       sudo docker ps --all   
 
@@ -39,13 +39,21 @@ Elimina todas las imágenes que no están siendo utilizadas en ningún contenedo
      sudo docker image prune
 
  ### Borrado de un docker:
-  
-       sudo docker ps ---> ver qué «Container ID» tiene el contenedor que queremos borrar
-       
+
+Ver qué «Container ID» tiene el contenedor que queremos borrar:
+
+       sudo docker ps 
+
+Paramos el docker:       
+
        sudo docker stop «Container ID»
-      
+
+Borramos el docker:
+
        sudo docker rm   «Container ID»
-       
+
+Borramos finalmente la carperta del docker:
+
        sudo rm -R carpetadelDocker
   
  ### Copia exacta de un docker     
