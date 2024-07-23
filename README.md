@@ -14,6 +14,11 @@ Hacer test de velociad en una unidad (en este caso la MicroSD):
 
        hdparm -Tt /dev/mmcblk0
 
+Borramos todos los logs que tienen mas de 5 dias a la 1:00 (crontab -e)
+
+      00 01  * * *  su -l root -c '/usr/bin/find /var/log/httpd/*.gz -mtime +5 -type f -exec rm -f  \{\} \;'
+
+
 
 ## Docker:
 
