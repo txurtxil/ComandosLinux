@@ -38,6 +38,26 @@ pero no se están ejecutando actualmente:
   Para ver las imagenes docker en el sistema
   
       sudo docker image ls
+
+ Iniciar y reiniciar todos los servicios definidos en docker-compose.yml
+ 
+         docker-compose up 
+      
+ Parar unicamente servicios
+ 
+      docker-compose stop
+
+Apaga y borra containers, networks..
+
+      docker-compose down 
+
+Apagar y quitar volúmenes 
+
+      docker-compose down --volumes 
+
+Apagar y quitar images
+
+      docker-compose down --rmi <all|local> 
       
 Elimina todas las imágenes que no están siendo utilizadas en ningún contenedor en ejecución.
      
