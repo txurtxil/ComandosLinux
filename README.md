@@ -63,6 +63,10 @@ Elimina todas las imágenes que no están siendo utilizadas en ningún contenedo
      
      sudo docker image prune
 
+Para iniciar sesion en el contendor de un docker:
+
+      sudo docker exec -it <nombre_del_contenedor> /bin/bash
+
  ### Borrado de un docker:
 
 Ver qué «Container ID» tiene el contenedor que queremos borrar:
