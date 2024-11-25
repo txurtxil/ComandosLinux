@@ -30,11 +30,11 @@ Fichero exports
   
   /carpeta/a/compartir  *(rw,all_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)
 
-  Reiniciar el servicio
+Reiniciar el servicio
 
   sudo systemctl restart nfs-kernel-server
 
-  Para llegar hasta el equipo que tiene la carpeta compartida:
+Para llegar hasta el equipo que tiene la carpeta compartida:
   
       sudo mount -t nfs EQUIPO_COMARTE:/ /mnt
 
