@@ -67,7 +67,7 @@ Para iniciar sesion en el contendor de un docker:
 
       sudo docker exec -it <nombre_del_contenedor> /bin/bash
 
-Para que un docker se lanzce en el reboot de maquina (lanzar desde la carpeta del docker):
+Para que los docker se lanzen en el reboot de maquina:
 
       docker compose up -d
 
