@@ -25,13 +25,13 @@ sudo apt install nfs-kernel-server
 
 Fichero exports
 
-  sudo nano /etc/exports (nota: asterisco * puede ser sustituido por una IP del cliente si no queremos para todos)
+      sudo nano /etc/exports (nota: asterisco * puede ser sustituido por una IP del cliente si no queremos para todos)
   
-  /carpeta/a/compartir  *(rw,all_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)
+      /carpeta/a/compartir  *(rw,all_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)
 
 Reiniciar el servicio
 
-  sudo systemctl restart nfs-kernel-server
+      sudo systemctl restart nfs-kernel-server
 
 Para llegar hasta el equipo que tiene la carpeta compartida:
   
