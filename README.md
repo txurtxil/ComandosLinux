@@ -19,6 +19,24 @@ Borramos todos los logs que tienen mas de 5 dias a la 1:00 (crontab -e)
       00 01  * * *  su -l root -c '/usr/bin/find /var/log/httpd/*.gz -mtime +5 -type f -exec rm -f  \{\} \;'
 
 
+## Compartir por NFS:
+
+sudo apt install nfs-kernel-server
+
+
+Fichero exports
+
+  sudo nano /etc/exports (nota: asterisco * puede ser sustituido por una IP del cliente si no queremos para todos)
+  
+  /carpeta/a/compartir  *(rw,all_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)
+
+  Reiniciar el servicio
+
+  sudo systemctl restart nfs-kernel-server
+
+  Para llegar hasta el equipo que tiene la carpeta compartida:
+  
+      sudo mount -t nfs EQUIPO_COMARTE:/ /mnt
 
 ## Docker:
 
