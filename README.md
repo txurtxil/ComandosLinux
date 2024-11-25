@@ -31,9 +31,13 @@ Añadimos la linea (nota: asterisco * puede ser sustituido por una IP del client
   
       /carpeta/a/compartir  *(rw,all_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)
 
-Reiniciar el servicio
+Reiniciar el servicio (Raspberry):
 
       sudo systemctl restart nfs-kernel-server
+
+Reiniciar el servicio (Manjario Linux)
+
+      sudo systemctl enable --now nfs-server.service  
 
 Para llegar hasta el equipo que tiene la carpeta compartida:
   
