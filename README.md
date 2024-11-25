@@ -25,9 +25,9 @@ sudo apt install nfs-kernel-server
 
 Fichero exports
 
-      sudo nano /etc/exports (nota: asterisco * puede ser sustituido por una IP del cliente si no queremos para todos)
+      sudo nano /etc/exports 
 
-Añadimos la linea:
+Añadimos la linea (nota: asterisco * puede ser sustituido por una IP del cliente si no queremos para todos):
   
       /carpeta/a/compartir  *(rw,all_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)
 
@@ -38,6 +38,10 @@ Reiniciar el servicio
 Para llegar hasta el equipo que tiene la carpeta compartida:
   
       sudo mount -t nfs EQUIPO_COMARTE:/ /mnt
+
+## Cambiar etiquetas de particiones ext
+      
+      e2label /dev/sdd1 nueva_etiqueta
 
 ## Docker:
 
