@@ -23,7 +23,6 @@ Borramos todos los logs que tienen mas de 5 dias a la 1:00 (crontab -e)
 
 sudo apt install nfs-kernel-server
 
-
 Fichero exports
 
   sudo nano /etc/exports (nota: asterisco * puede ser sustituido por una IP del cliente si no queremos para todos)
