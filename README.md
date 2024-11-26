@@ -155,6 +155,10 @@ Excluimos el contenido de una carpeta de la copìa:
 
         rsync -a --exclude 'transmission/downloads/complete/*' /media/txurtxil/256GB/ /mnt/docker/
 
+Si queremos un tar.gz de la carpeta docker conservando permisos, comprimiendo y excluyendo carpetas:
+
+         sudo tar -czf docker.tar.gz --exclude='/media/txurtxil/256GB/transmission/downloads/complete/*' /media/txurtxil/256GB/
+
 Saber los id’s de los contenedores que están detenidos
       
         sudo docker ps -a -q                                 
