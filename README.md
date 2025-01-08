@@ -213,3 +213,11 @@ Yas tenemos lista la insdtalacion de wordpress en la url:
 
              http://direcc-ip:8080
 
+
+NOTAS:
+
+  Si tenemos problasm con la importacion del fichero XML de blogger hay que crear el fichero .htaccess e incluir:
+
+              php_value upload_max_filesize 12M
+              php_value post_max_size 13M
+              php_value memory_limit 15M
