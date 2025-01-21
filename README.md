@@ -171,10 +171,47 @@ Y con esto quedarían todos los dockers copiados. Podríamos llevarlos a una nue
 
 ### Compartir con Samba
 
+Instalar seridor samba:
 
-Montar unidad remota smb con permismo de escritura para un usuario no root
+sudo apt update && sudo apt install samba samba-common -y
 
-         sudo mount -t cifs //IP_SERVIDOR/Carpeta_compartida /media/usuario/256GB/duplicati/backups -o username=usuario,password=1234,iocharset=utf8,rw,uid=$(id -u usuario),gid=$(id -g usuario)
+Editar el fichero /etc/smb.conf (cambiar usaurio por el que usamos en nuesta pi):
+
+      sudo nano /etc/samba/smb.conf
+
+            [512GB]
+            path = /mnt/512GB
+            browseable = yes
+            writable = yes
+            read only = no
+            guest ok = no
+            valid users = usuario
+            force user = usuario
+            create mask = 0660
+            directory mask = 0770
+      
+Creamos el usuario para samba:
+
+         sudo adduser usuario (cambiar usuario por el que usamos en nuesta pi)
+         
+Hay que dar clave al usuario a usar en samba:
+         sudo smbpasswd -e usuario (cambiar usuario por el que usamos en nuesta pi)
+
+Podemos cambiar propietario de la carpeta a compartir para el ususuario que usamos en la pi:
+      
+      sudo chown -R usuario:usuario /mnt/512G
+      
+Reiniciamos servicios:
+
+        sudo service smbd restart
+        sudo systemctl restart nmbd
+
+Podemos verificar el estado de Samba:
+         sudo smbstatus -S
+
+Montar unidad remota smb con permismo de escritura para un usuario no root (cambiar usuario por el que usamos en nuesta pi)
+
+         sudo mount -t cifs //IP_SERVIDOR/Carpeta_compartida /media/usuario/256GB/duplicati/backups -o username=usuario,password=1234,iocharset=utf8,rw,uid=$(id -u usuario),gid=$(id -g usuario) 
 
 ### Instalar duplicati:
 
