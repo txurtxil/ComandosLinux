@@ -169,7 +169,7 @@ Podemos encender los contenedores con el siguiente comando.
         
 Y con esto quedarían todos los dockers copiados. Podríamos llevarlos a una nueva ubicación (a otro servidor) y levantarlos de nuevo.
 
-### Compartir con Ssmba
+### Compartir con Samba
 
 
 Montar unidad remota smb con permismo de escritura para un usuario no root
