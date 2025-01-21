@@ -168,6 +168,42 @@ Podemos encender los contenedores con el siguiente comando.
         sudo docker start $(sudo docker ps -a -q)           
         
 Y con esto quedarían todos los dockers copiados. Podríamos llevarlos a una nueva ubicación (a otro servidor) y levantarlos de nuevo.
+
+### Compartir con Ssmba
+
+
+Montar unidad remota smb con permismo de escritura para un usuario no root
+
+         sudo mount -t cifs //IP_SERVIDOR/Carpeta_compartida /media/usuario/256GB/duplicati/backups -o username=usuario,password=1234,iocharset=utf8,rw,uid=$(id -u usuario),gid=$(id -g usuario)
+
+### Instalar duplicati:
+
+Crear la carpeta duplicati y dentro el fichero docker-compose.yml
+
+                  services:
+                  
+                    duplicati:
+                      image: lscr.io/linuxserver/duplicati:latest
+                      container_name: duplicati
+                      environment:
+                        - PUID=1000
+                        - PGID=1000
+                        - TZ=Europe/Madrid
+                        - SETTINGS_ENCRYPTION_KEY=mysecret
+                        - DUPLICATI__WEBSERVICE_PASSWORD=p4ssw0rd
+                      volumes:
+                        #lee las carpetas licales (izq) y mapea con la imagen (decha)
+                        - ./config:/config
+                        #Si la carpeta backups es remota (con samba) es necesario parar(docker stop duplicati) montar smb y docker start duplicati
+                        - ./backups:/backups
+                        - /media/usuario/256GB:/source
+                      ports:
+                        - "8200:8200"
+                      restart: unless-stopped
+
+Lanzamos la instalacion:
+                  docker-compose up -d
+                  Url: http://localhost:8200 (password es p4ssw0rd)
         
 ### Instalar docker wordpress:
 
