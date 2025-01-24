@@ -246,52 +246,12 @@ Lanzamos la instalacion:
         
 ### Instalar docker wordpress:
 
-Crear la carpeta wordpress y dentro el fichero docker-compose.yml
-
-                  version: '3.1'
-                  
-                  services:
-                  
-                    wordpress:
-                      image: wordpress
-                      restart: always
-                      ports:
-                        - 8080:80
-                      environment:
-                        WORDPRESS_DB_HOST: db
-                        WORDPRESS_DB_USER: exampleuser
-                        WORDPRESS_DB_PASSWORD: examplepass
-                        WORDPRESS_DB_NAME: exampledb
-                      volumes:
-                        - wordpress:/var/www/html
-                  
-                    db:
-                      image: mysql:8.0
-                      restart: always
-                      environment:
-                        MYSQL_DATABASE: exampledb
-                        MYSQL_USER: exampleuser
-                        MYSQL_PASSWORD: examplepass
-                        MYSQL_RANDOM_ROOT_PASSWORD: '1'
-                      volumes:
-                        - db:/var/lib/mysql
-                  
-                  volumes:
-                    wordpress:
-                    db:
-
-Lanzamos la instalacion y elecucion silenciosa:
-
-           sudo docker-compose -p "wordpress" up -d
-
-Yas tenemos lista la insdtalacion de wordpress en la url:
-
-             http://direcc-ip:8080
+https://www.youtube.com/watch?v=SjibdU4C_rg&list=PLosQz4IaLJ5hbRp_4F7F_NhlM15vPRgZz&index=8
 
 
-NOTAS:
+NOTAS problemas wordpress:
 
-  Si tenemos problasm con la importacion del fichero XML de blogger hay que crear el fichero .htaccess e incluir:
+  Si tenemos problemas con la importacion del fichero XML de blogger hay que crear el fichero .htaccess e incluir:
 
               php_value upload_max_filesize 12M
               php_value post_max_size 13M
