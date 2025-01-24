@@ -89,6 +89,8 @@ Apagar y quitar images
 Elimina todas las imágenes que no están siendo utilizadas en ningún contenedor en ejecución.
      
      sudo docker image prune
+Elimina todos los volumenes que no están siendo utilizados
+     docker volume prune
 
 Para iniciar sesion en el contendor de un docker:
 
