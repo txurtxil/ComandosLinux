@@ -171,6 +171,31 @@ Podemos encender los contenedores con el siguiente comando.
         
 Y con esto quedarían todos los dockers copiados. Podríamos llevarlos a una nueva ubicación (a otro servidor) y levantarlos de nuevo.
 
+### Inteligencia artificial
+
+
+Instalar ollama Comandos utilizados :
+
+      $ git clone https://github.com/jmlcas/ollama
+      
+      $ cd ollama
+      
+      $ docker compose up -d
+
+      IA diminuta, mas liviana y rapida:
+      $ docker-compose exec ollama ollama pull tinyllama 
+      
+Comandos utilizados para usarmoelos de la IA deepseek, la r1 mas liviana y la v2 mas potente (pero debemos tener Ollama ya instalado):
+
+      $ docker exec ollama ollama pull deepseek-r1 
+      
+      $ docker exec ollama ollama pull deepseek-v2
+
+Para eliminar un modelo, por ejemplo deepseek v2:
+
+      $ docker exec ollama ollama rm deepseek-v2
+
+
 ### Compartir con Samba
 
 Instalar seridor samba:
