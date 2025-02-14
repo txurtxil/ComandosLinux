@@ -185,7 +185,7 @@ Instalar ollama Comandos utilizados :
       IA diminuta, mas liviana y rapida:
       $ docker-compose exec ollama ollama pull tinyllama 
       
-Comandos utilizados para usarmoelos de la IA deepseek, la 1.3b la ia de deepseek mas liviana y la v2 mas potente (pero debemos tener Ollama ya instalado):
+Comandos utilizados para usarmoelos de la IA deepseek, la 1.3b la ia de deepseek mas liviana orientada a esarrollo y la v2 mas potente (pero debemos tener Ollama ya instalado):
 
       $ docker exec ollama ollama pull deepseek-coder:1.3b
       
